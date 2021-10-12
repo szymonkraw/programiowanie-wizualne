@@ -10,7 +10,8 @@
         <Label Content="STOPER&#xD;&#xA;" HorizontalAlignment="Left" Margin="71,45,0,0" VerticalAlignment="Top" Height="84" Width="192" FontSize="50"/>
         <Button x:Name="START" Content="START" HorizontalAlignment="Left" Margin="215,263,0,0" VerticalAlignment="Top" Height="88" Width="147" FontSize="50" Click="start_button"/>
         <Button Content="STOP" HorizontalAlignment="Left" Margin="495,263,0,0" VerticalAlignment="Top" Height="88" Width="176" FontSize="50" Click="stop_button"/>
-        <Label Content="Label" Name="wynik" HorizontalAlignment="Left" Margin="268,45,0,0" VerticalAlignment="Top" Height="149" Width="450" FontSize="50"/>
+        <Label Content="Label" Name="wynik" HorizontalAlignment="Left" Margin="268,45,0,0" VerticalAlignment="Top" Height="149" Width="132" FontSize="50"/>
+        <Label Content="Label" Name="wynik2" HorizontalAlignment="Left" Margin="476,45,0,0" VerticalAlignment="Top" Height="149" Width="132" FontSize="50"/>
 
     </Grid>
 </Window>

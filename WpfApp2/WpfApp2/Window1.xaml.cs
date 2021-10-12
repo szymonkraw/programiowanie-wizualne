@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading; 
+using System.Windows.Threading;
 
 namespace WpfApp2
 {
@@ -21,27 +21,48 @@ namespace WpfApp2
     /// </summary>
     public partial class Window1 : Window
     {
-       
-        DateTime poczatek;
-        TimeSpan ts;
+        DispatcherTimer stoper = new DispatcherTimer();
+        System.DateTime aktualna = DateTime.Now;
         public Window1()
         {
             InitializeComponent();
-
-           
+            
+            //wynik.Content = DateTime.Now.Second; 
+            stoper.Interval = TimeSpan.FromSeconds(1);
+            stoper.Tick += tykanie;
+                
         }
-
-        private void start_button(object sender, RoutedEventArgs e)
+        private void tykanie(object sender, EventArgs e)
         {
-            string test;
-            ts = DateTime.Now - poczatek;
-            wynik.Content = ts.ToString();
+            System.DateTime aktualna2 = DateTime.Now;
+            //wynik.Content = DateTime.Now.Minute.ToString();
+            // wynik2.Content = DateTime.Now.Second.ToString();
+            // System.DateTime date1 = new System.DateTime(2015, 3, 10, 2, 0, 10);
+            //  wynik.Content = date1.Minute;
+            // System.DateTime date2 = new System.DateTime(2015, 3, 10, 2, 0, 0);
+            // wynik2.Content = date2.Second;
+            System.TimeSpan date1 = aktualna2.Subtract(aktualna);
+            wynik.Content = date1.Minutes;
+            System.TimeSpan date2 = aktualna2.Subtract(aktualna);
+            wynik2.Content = date2.Seconds;
         }
 
-        private void stop_button(object sender, RoutedEventArgs e)
+
+        private void start_button(object sender, EventArgs e)
         {
-            poczatek = new DateTime(DateTime.Now.Ticks);
-          //  Timer1.enabled = true;
+            aktualna = DateTime.Now;
+            stoper.Start(); 
         }
+
+        private void stop_button(object sender, EventArgs e)
+        {
+            stoper.Stop();
+            //aktualna = DateTime.Now;
+        }
+     
     }
 }
+
+
+
+
