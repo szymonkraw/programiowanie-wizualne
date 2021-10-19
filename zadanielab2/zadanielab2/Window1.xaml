@@ -1,0 +1,23 @@
+﻿<Window x:Class="zadanielab2.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zadanielab2"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <ComboBox HorizontalAlignment="Left" Margin="91,183,0,0" VerticalAlignment="Top" Width="171" Height="56" FontSize="20" Text="Moc silnika" >
+            <ComboBoxItem Selected="ComboBoxItem_Selected_moc1" Unselected="ComboBoxItem_Unselected_moc1">100 KM</ComboBoxItem>
+            <ComboBoxItem Selected="ComboBoxItem_Selected_moc2" Unselected="ComboBoxItem_Unselected_moc2">135 KM</ComboBoxItem>
+            <ComboBoxItem Selected="ComboBoxItem_Selected_moc3" Unselected="ComboBoxItem_Unselected_moc3">160 KM</ComboBoxItem>
+            <ComboBoxItem Selected="ComboBoxItem_Selected_moc4" Unselected="ComboBoxItem_Unselected_moc4">200 KM</ComboBoxItem>
+        </ComboBox>
+        <RadioButton Content="Benzyna" HorizontalAlignment="Left" Margin="91,10,0,0" VerticalAlignment="Top" Height="24" Width="129" FontSize="20" Checked="RadioButton_Checked_benzyna" Unchecked="RadioButton_Unchecked_benzyna"/>
+        <RadioButton Content="Diesel" HorizontalAlignment="Left" Margin="91,44,0,0" VerticalAlignment="Top" Height="24" Width="129" FontSize="20" Checked="RadioButton_Checked_diesel" Unchecked="RadioButton_Unchecked_diesel"/>
+        <RadioButton Content="Hybryda" HorizontalAlignment="Left" Margin="91,73,0,0" VerticalAlignment="Top" Height="24" Width="129" FontSize="20" Checked="RadioButton_Checked_hybryda" Unchecked="RadioButton_Unchecked_hybryda"/>
+        <Label Name ="cena_silnika" Content="00,00" HorizontalAlignment="Left" Margin="533,44,0,0" VerticalAlignment="Top" Height="69" Width="144" FontSize="30" />
+        <Button Content="Powrot" HorizontalAlignment="Left" Margin="533,283,0,0" VerticalAlignment="Top" Height="80" Width="159" FontSize="30" Click="Button_Click"/>
+
+    </Grid>
+</Window>
