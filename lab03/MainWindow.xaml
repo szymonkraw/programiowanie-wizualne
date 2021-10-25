@@ -1,0 +1,24 @@
+﻿<Window x:Class="lab03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button Content="ADD" HorizontalAlignment="Left" Margin="372,68,0,0" VerticalAlignment="Top" Width="108" Height="49" Click="Button_Click"/>
+        <Button Content="zapisz" HorizontalAlignment="Left" Margin="65,243,0,0" VerticalAlignment="Top" Width="102" Height="40" Click="Button_Click_1"/>
+        <Button Content="wczytaj" HorizontalAlignment="Left" Margin="306,243,0,0" VerticalAlignment="Top" Width="103" Height="40" Click="Button_Click_2"/>
+        <Grid Name ="grid1" HorizontalAlignment="Left" Height="203" Margin="39,22,0,0" VerticalAlignment="Top" Width="275">
+            <ListView x:Name="lista" Margin="0,0,-22,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn x:Name="kol1" Header="name" Width="100" DisplayMemberBinding="{Binding Path=name}"/>
+                        <GridViewColumn x:Name="kol2" Header="ID" Width="150" DisplayMemberBinding="{Binding Path=ID}"/>
+                        <GridViewColumn x:Name="kol3" Header="count" Width="40" DisplayMemberBinding="{Binding Path=count}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </Grid>
+
+
+    </Grid>
+</Window>
