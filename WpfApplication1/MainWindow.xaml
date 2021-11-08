@@ -3,9 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button Name ="marki_przycisk" Content="Marki" HorizontalAlignment="Left" Margin="70,110,0,0" VerticalAlignment="Top" Width="107" Height="51" Click="marki_przycisk_Click"/>
-        <Button Name ="silnik_przycisk" Content="Silnik" HorizontalAlignment="Left" Margin="238,110,0,0" VerticalAlignment="Top" Width="113" Height="51" Click="silnik_przycisk_Click" />
-        <Label Name="cena_main" Content="0,00" HorizontalAlignment="Left" Margin="372,46,0,0" VerticalAlignment="Top" Height="56" Width="97"/>
-
+        <Button Name ="b_Choose" Content="Choose" HorizontalAlignment="Left" Margin="36,30,0,0" VerticalAlignment="Top" Width="82" Height="25" Click="b_Choose_Click"/>
+        <Button Name="b_A"  Content="A" HorizontalAlignment="Left" Margin="36,76,0,0" VerticalAlignment="Top" Width="82" Height="29" Click="b_A_Click"/>
+        <Button Name ="b_B" Content="B" HorizontalAlignment="Left" Margin="36,127,0,0" VerticalAlignment="Top" Width="82" Height="26" Click="b_B_Click"/>
+        <Button Name ="b_C" Content="C" HorizontalAlignment="Left" Margin="36,178,0,0" VerticalAlignment="Top" Width="82" Height="26" Click="b_C_Click"/>
+        <Button Name ="b_D" Content="D" HorizontalAlignment="Left" Margin="36,230,0,0" VerticalAlignment="Top" Width="82" Height="32" Click="b_D_Click"/>
+        <Image Name ="img" HorizontalAlignment="Left" Height="232" Margin="210,30,0,0" VerticalAlignment="Top" Width="236" >
+            <Image.Source>
+                <BitmapImage  UriSource ="" Rotation="Rotate90" />
+            </Image.Source>
+        </Image>
     </Grid>
 </Window>

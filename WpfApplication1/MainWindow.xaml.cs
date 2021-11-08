@@ -12,35 +12,86 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Microsoft.Win32;
+using System.Drawing;
 
 namespace WpfApplication1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public static class statyczna
-    {
-        public static int cena;
-
-    }
+    ///         int liczba = 0; 
+      
 
     public partial class MainWindow : Window
     {
+
+       // public void RotateFlip(System.Drawing.RotateFlipType rotateFlipType);
+    // public   int liczba = 0; 
+        public int liczba = 0;
+       public Uri przekrecenie; 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void marki_przycisk_Click(object sender, RoutedEventArgs e)
+        public void b_Choose_Click(object sender, RoutedEventArgs e)
         {
-            Window1 marki = new Window1();
-            marki.Show();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                Uri fileUri = new Uri(openFileDialog.FileName);
+                przekrecenie = fileUri; 
+                img.Source = new BitmapImage(fileUri);
+            }
         }
 
-        private void silnik_przycisk_Click(object sender, RoutedEventArgs e)
+        private void b_A_Click(object sender, RoutedEventArgs e)
         {
-            Window2 silnik = new Window2();
-            silnik.Show();
+            
+        }
+
+        private void b_B_Click(object sender, RoutedEventArgs e)
+        {
+           
+
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.UriSource = przekrecenie;
+            if (liczba == 0)
+            {
+                bi.Rotation = Rotation.Rotate90;
+                liczba++;
+            }
+            else   if (liczba == 1)
+            {
+                bi.Rotation = Rotation.Rotate180;
+                liczba++;
+            }
+            else if (liczba == 2)
+            {
+                bi.Rotation = Rotation.Rotate270;
+                liczba++;
+            }
+            else   if (liczba == 3)
+            {
+                bi.Rotation = Rotation.Rotate0;
+                liczba=0;
+            }
+            bi.EndInit();
+            img.Source = bi;
+            przekrecenie = bi.UriSource; 
+        }
+
+        private void b_C_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void b_D_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
