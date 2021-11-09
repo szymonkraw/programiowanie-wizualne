@@ -122,7 +122,7 @@ namespace zobrazem
                         c = System.Drawing.Color.FromArgb(c.R,c.G, c.B);
                         sourceimage.SetPixel(i, j, c);
                     }
-                 else if (c.G < c.R || c.G < c.B)
+                 else if (c.G <= c.R || c.G <= c.B)
                     {
                         c = System.Drawing.Color.FromArgb(255,255,255);
                         sourceimage.SetPixel(i, j, c);
