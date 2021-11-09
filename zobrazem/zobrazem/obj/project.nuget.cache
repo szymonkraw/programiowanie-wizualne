@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "OZPLpausuPQnkegtxlrVq30ZJZeBkTYtZ7DKRa21vzmk4q+9G2RxP4XHnVGUC4TykI7NnEqm1mcfwMP0cZYMyA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Szymon\\source\\repos\\zobrazem\\zobrazem\\zobrazem.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Szymon\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Szymon\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
