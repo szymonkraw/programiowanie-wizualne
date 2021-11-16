@@ -15,7 +15,9 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 using System.Drawing;
-using System.Collections; 
+using System.Collections;
+using System.Runtime.InteropServices;
+
 
 namespace lab05
 {
@@ -97,14 +99,38 @@ namespace lab05
 
 
 
-
     public partial class MainWindow : Window
     {
 
-        public string[] wzr; 
+
+
+        /*
+        private const int WM_USER = 0x0400;
+        private const int EM_SETEVENTMASK = (WM_USER + 69);
+        private const int WM_SETREDRAW = 0x0b;
+        private IntPtr OldEventMask;
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+
+        public void BeginUpdate()
+        {
+            SendMessage(this.Handle, WM_SETREDRAW, IntPtr.Zero, IntPtr.Zero);
+            OldEventMask = (IntPtr)SendMessage(this.Handle, EM_SETEVENTMASK, IntPtr.Zero, IntPtr.Zero);
+        }
+
+        public void EndUpdate()
+        {
+            SendMessage(this.Handle, WM_SETREDRAW, (IntPtr)1, IntPtr.Zero);
+            SendMessage(this.Handle, EM_SETEVENTMASK, IntPtr.Zero, OldEventMask);
+        }
+        */
+
+
+        public string[] wzr;
 
         static public string wzorce = "";
-     static    public string sekwencja = "";
+        static public string sekwencja = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -115,13 +141,15 @@ namespace lab05
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
-                string sciezka= new string(openFileDialog.FileName);
+                string sciezka = new string(openFileDialog.FileName);
                 // obraz = fileUri;
                 //img.Source = new BitmapImage(fileUri);
-                
+
                 sekwencja = File.ReadAllText(sciezka);
-                sekwencja_text.Text = sekwencja;
-                
+                sekwencja_text.AppendText(sekwencja);
+                // Add(newRun(sekwencja)); 
+                //   sekwencja_text.Text = sekwencja;
+
             }
         }
 
@@ -132,39 +160,110 @@ namespace lab05
 
         private void znajdz_wzr_Click(object sender, RoutedEventArgs e)
         {
-             szukane_wzorce.Text = findpattern.szuk(sekwencja);
-             
-           //  ItemsControl item1  = new ItemsControl() ;
-            
-            wzorce =     findpattern.szuk(sekwencja);
+            szukane_wzorce.Text = findpattern.szuk(sekwencja);
+
+            //  ItemsControl item1  = new ItemsControl() ;
+
+            wzorce = findpattern.szuk(sekwencja);
             char[] delims = new[] { ' ', '\n' };
-             wzr = wzorce.Split(delims);
+            wzr = wzorce.Split(delims);
             //string[] wzr = wzorce.Split(' ');
-        
-            for(int i = 0; i < wzr.Length -1 ; i = i+ 2 )
+
+            for (int i = 0; i < wzr.Length - 1; i = i + 2)
             {
                 wybor.Items.Add(wzr[i]);
             }
 
-            
+
         }
 
+        /*
+        static public void sprawdz (int poz, string znl)
+        {
+            if (sekwencja.Substring(poz+1, 4 )==znl)
+            {
+                TextRange rangeoftext = new TextRange(sekwencja_text.Document.ContentEnd, sekwencja_text.Document.ContentEnd);
+                //rangeoftext.Text = wybrana;
+                //i = i + 4 ; 
+                rangeoftext.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Blue);
+            }
+        }
+        */
+
+        //private TextPointer caretBefore = null;
         private void wybor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // wybor.ItemsSource = wzr[2]; 
-            string wybrana = wybor.Text;
+            wybor.Items.Refresh();
 
-            for (int i = 0; i <sekwencja.Length; i ++)
+
+            TextRange czysc = new TextRange(sekwencja_text.Document.ContentStart, sekwencja_text.Document.ContentEnd);
+            czysc.Text = "";
+            czysc.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Black);
+
+            string wybrana = wybor.Text;
+            int pozycja = 0;
+
+            int spr = 0;
+
+            for (int i = 0; i < sekwencja.Length - 4; i++)
             {
+
                 if (sekwencja.Substring(i, 4) == wybrana)
                 {
-                    wybor.Text.Substring(i, 4) ; 
+
+
+                    if (spr == 0)
+                    {
+                        sekwencja_text.AppendText(sekwencja.Substring(0, i));  //lub samo i - 1 to jeszcze można zmienić 
+                        spr = i + 4;
+
+
+
+                        TextRange rangeoftext = new TextRange(sekwencja_text.Document.ContentEnd, sekwencja_text.Document.ContentEnd);
+                        rangeoftext.Text = wybrana;
+          
+                        rangeoftext.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Blue);
+
+                        i = i + 4;
+
+                        pozycja = i-4 ;
+                    }
+              
+
+                    else if (spr != 0)
+                    {
+
+                        sekwencja_text.AppendText(sekwencja.Substring(spr, i - spr  ));
+                        spr = i + 4;
+
+                        TextRange rangeoftext1 = new TextRange(sekwencja_text.Document.ContentEnd, sekwencja_text.Document.ContentEnd);
+                        rangeoftext1.Text = wybrana;
+                        //i = i + 4 ; 
+                        rangeoftext1.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Blue);
+                      //  pozycja = i;
+                        i = i + 4;
+
+                      //  TextRange rangeoftext2 = new TextRange(sekwencja_text.Document.ContentEnd, sekwencja_text.Document.ContentEnd);
+                      //  rangeoftext2.Text = wybrana;
+                     //   i = i + 4;
+                     //   rangeoftext2.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Blue);
+
+                        pozycja = i -4 ;
+
+                    }
+
+
+
                 }
             }
 
 
-            // sekwencja_text.Text = wybrana; 
+                TextRange kolor = new TextRange(sekwencja_text.Document.ContentEnd, sekwencja_text.Document.ContentEnd);
+                kolor.Text = sekwencja.Substring(pozycja + 4, sekwencja.Length - (pozycja + 4 ));
+                kolor.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Black);
 
+
+            }
         }
     }
-}
+

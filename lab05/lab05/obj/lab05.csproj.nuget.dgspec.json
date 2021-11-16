@@ -39,6 +39,16 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Syncfusion.Blazor.Inputs": {
+              "target": "Package",
+              "version": "[19.3.0.53, )"
+            },
+            "Syncfusion.Shared.WPF": {
+              "target": "Package",
+              "version": "[19.3.0.53, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
