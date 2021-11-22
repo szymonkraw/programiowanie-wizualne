@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ArrayOfDane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <dane>
+    <id>1</id>
+    <liczba>0</liczba>
+    <Id>1</Id>
+    <Liczba>0</Liczba>
+  </dane>
+  <dane>
+    <imie>Tfx</imie>
+    <id>2</id>
+    <liczba>1324</liczba>
+    <Imie>Tfx</Imie>
+    <Id>2</Id>
+    <Liczba>1324</Liczba>
+  </dane>
+  <dane>
+    <imie>Tfx</imie>
+    <id>3</id>
+    <liczba>1324</liczba>
+    <Imie>Tfx</Imie>
+    <Id>3</Id>
+    <Liczba>1324</Liczba>
+  </dane>
+  <dane>
+    <imie>Tfx</imie>
+    <id>4</id>
+    <liczba>1324</liczba>
+    <Imie>Tfx</Imie>
+    <Id>4</Id>
+    <Liczba>1324</Liczba>
+  </dane>
+</ArrayOfDane>

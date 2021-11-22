@@ -1,0 +1,22 @@
+﻿<Window x:Class="lab03.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_nr._3"
+        mc:Ignorable="d"
+        Title="Window2" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="lista_szukane" Margin="-11,0,115,84">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="Imie" Header="Imie" Width="100" DisplayMemberBinding="{Binding Imie}"/>
+                    <GridViewColumn x:Name="Id" Header="Id" Width="150" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn x:Name="Liczba" Header="Liczba" Width="40" DisplayMemberBinding="{Binding Liczba}"/>
+                </GridView>
+            </ListView.View>
+            <Button Content="Button"/>
+        </ListView>
+        <Button Name="close" Content="Zamknij" HorizontalAlignment="Left" Margin="584,355,0,0" VerticalAlignment="Top" Height="56" Width="141" Click="close_Click"/>
+    </Grid>
+</Window>
