@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ArrayOfKsiazki xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ksiazki>
+    <tytul>bardzo</tytul>
+    <autor>ciekawa</autor>
+    <id1>1</id1>
+    <Wypozycz>0</Wypozycz>
+    <Tytul>bardzo</Tytul>
+    <Autor>ciekawa</Autor>
+    <ID1>1</ID1>
+    <wypozycz>0</wypozycz>
+  </ksiazki>
+  <ksiazki>
+    <tytul>oraz</tytul>
+    <autor>niesamowita</autor>
+    <id1>2</id1>
+    <Wypozycz>1</Wypozycz>
+    <Tytul>oraz</Tytul>
+    <Autor>niesamowita</Autor>
+    <ID1>2</ID1>
+    <wypozycz>1</wypozycz>
+  </ksiazki>
+  <ksiazki>
+    <tytul>ksiazka</tytul>
+    <autor>z</autor>
+    <id1>3</id1>
+    <Wypozycz>0</Wypozycz>
+    <Tytul>ksiazka</Tytul>
+    <Autor>z</Autor>
+    <ID1>3</ID1>
+    <wypozycz>0</wypozycz>
+  </ksiazki>
+  <ksiazki>
+    <tytul>zakresu </tytul>
+    <autor>c#</autor>
+    <id1>4</id1>
+    <Wypozycz>1</Wypozycz>
+    <Tytul>zakresu </Tytul>
+    <Autor>c#</Autor>
+    <ID1>4</ID1>
+    <wypozycz>1</wypozycz>
+  </ksiazki>
+</ArrayOfKsiazki>

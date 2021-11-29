@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ArrayOfUzytkownicy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <uzytkownicy>
+    <imie>Jan</imie>
+    <nazwisko>Kowalski</nazwisko>
+    <id>1</id>
+    <Imie>Jan</Imie>
+    <Nazwisko>Kowalski</Nazwisko>
+    <ID>1</ID>
+  </uzytkownicy>
+  <uzytkownicy>
+    <imie>Krzysztof</imie>
+    <nazwisko>Krawczyk</nazwisko>
+    <id>2</id>
+    <Imie>Krzysztof</Imie>
+    <Nazwisko>Krawczyk</Nazwisko>
+    <ID>2</ID>
+  </uzytkownicy>
+  <uzytkownicy>
+    <imie>Niesamowity</imie>
+    <nazwisko>Podróżnik</nazwisko>
+    <id>3</id>
+    <Imie>Niesamowity</Imie>
+    <Nazwisko>Podróżnik</Nazwisko>
+    <ID>3</ID>
+  </uzytkownicy>
+</ArrayOfUzytkownicy>

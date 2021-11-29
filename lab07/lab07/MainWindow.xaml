@@ -1,0 +1,42 @@
+﻿<Window x:Class="lab07.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab07"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="470" Width="1206">
+    <Grid>
+        <Button Name="wypozycz" Content="Wypożycz" HorizontalAlignment="Center" Margin="0,54,0,0" VerticalAlignment="Top" Height="63" Width="114" Click="wypozycz_Click"/>
+        <Button Name="oddaj" Content="Oddaj" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Height="63" Width="114" Click="oddaj_Click"/>
+        <Button Name ="dodaj_czyt" Content="Dodaj czytelnika" HorizontalAlignment="Left" Margin="146,342,0,0" VerticalAlignment="Top" Height="63" Width="114" Click="dodaj_czyt_Click"/>
+        <Button Name="dodaj_ks" Content="Dodaj książkę" HorizontalAlignment="Left" Margin="857,342,0,0" VerticalAlignment="Top" Height="63" Width="114" Click="dodaj_ks_Click"/>
+        <ListView x:Name="lista_użyt" Margin="0,0,700,150">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="Imie" Header="Imie" Width="100" DisplayMemberBinding="{Binding Imie}"/>
+                    <GridViewColumn x:Name="Nazwisko" Header="Nazwisko" Width="150" DisplayMemberBinding="{Binding Nazwisko}"/>
+                    <GridViewColumn x:Name="ID" Header="ID" Width="40" DisplayMemberBinding="{Binding ID}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="lista_książ" Margin="700,0,0,150">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="Tytul" Header="Tytul" Width="100" DisplayMemberBinding="{Binding Tytul}">
+                    </GridViewColumn>
+                    <GridViewColumn x:Name="Autor" Header="Autor" Width="150" DisplayMemberBinding="{Binding Autor}"/>
+                    <GridViewColumn x:Name="ID1" Header="ID" Width="40" DisplayMemberBinding="{Binding ID1}"/>
+                    <GridViewColumn x:Name="wypozyczenia" Header="wypozyczenia (dostępne książki)" Width="200" DisplayMemberBinding="{Binding wypozycz}">
+
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+
+        </ListView>
+        <Button Name ="dodaj" Content="dodaj" HorizontalAlignment="Left" Margin="313,356,0,0" VerticalAlignment="Top" Height="49" Width="56" Click="dodaj_Click"/>
+        <Button x:Name ="dodaj_Copy" Content="dodaj" HorizontalAlignment="Left" Margin="1023,356,0,0" VerticalAlignment="Top" Height="49" Width="56" Click="dodaj_Copy_Click"/>
+        <Button Name="wyjdz" Content="Wyjdź" HorizontalAlignment="Left" Margin="490,342,0,0" VerticalAlignment="Top" Height="58" Width="251" Click="wyjdz_Click"/>
+    </Grid>
+</Window>
