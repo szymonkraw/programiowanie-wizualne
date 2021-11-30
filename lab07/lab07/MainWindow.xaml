@@ -27,7 +27,7 @@
                     </GridViewColumn>
                     <GridViewColumn x:Name="Autor" Header="Autor" Width="150" DisplayMemberBinding="{Binding Autor}"/>
                     <GridViewColumn x:Name="ID1" Header="ID" Width="40" DisplayMemberBinding="{Binding ID1}"/>
-                    <GridViewColumn x:Name="wypozyczenia" Header="wypozyczenia (dostępne książki)" Width="200" DisplayMemberBinding="{Binding wypozycz}">
+                    <GridViewColumn x:Name="wypozyczenia" Header="wypozyczenia (ID użytkownika)" Width="200" DisplayMemberBinding="{Binding wypozycz}">
 
                     </GridViewColumn>
                 </GridView>

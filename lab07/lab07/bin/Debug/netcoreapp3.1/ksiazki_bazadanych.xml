@@ -14,30 +14,30 @@
     <tytul>oraz</tytul>
     <autor>niesamowita</autor>
     <id1>2</id1>
-    <Wypozycz>1</Wypozycz>
+    <Wypozycz>2</Wypozycz>
     <Tytul>oraz</Tytul>
     <Autor>niesamowita</Autor>
     <ID1>2</ID1>
-    <wypozycz>1</wypozycz>
+    <wypozycz>2</wypozycz>
   </ksiazki>
   <ksiazki>
     <tytul>ksiazka</tytul>
     <autor>z</autor>
     <id1>3</id1>
-    <Wypozycz>0</Wypozycz>
+    <Wypozycz>--</Wypozycz>
     <Tytul>ksiazka</Tytul>
     <Autor>z</Autor>
     <ID1>3</ID1>
-    <wypozycz>0</wypozycz>
+    <wypozycz>--</wypozycz>
   </ksiazki>
   <ksiazki>
     <tytul>zakresu </tytul>
     <autor>c#</autor>
     <id1>4</id1>
-    <Wypozycz>1</Wypozycz>
+    <Wypozycz>2</Wypozycz>
     <Tytul>zakresu </Tytul>
     <Autor>c#</Autor>
     <ID1>4</ID1>
-    <wypozycz>1</wypozycz>
+    <wypozycz>2</wypozycz>
   </ksiazki>
 </ArrayOfKsiazki>

@@ -95,14 +95,14 @@ namespace lab07
             get { return id1; }
             set { id1 = value; }
         }
-        public int Wypozycz;
+        public string Wypozycz;
 
-        public int wypozycz
+        public string wypozycz
         {
             get { return Wypozycz; }
             set { Wypozycz = value; }
         }
-        public ksiazki(string Tytul, string Autor, int ID1, int wypozycz)
+        public ksiazki(string Tytul, string Autor, int ID1, string wypozycz)
         {
             this.Tytul = Tytul;
             this.Autor = Autor;
@@ -130,7 +130,7 @@ namespace lab07
         public static string podany_tytul;
         public static string podany_autor;
         public static int podane_id1;
-        public static int podane_wypoz;
+        public static string podane_wypoz;
         //public List<uzytkownicy> lista2 = new List<uzytkownicy>();
     }
     
@@ -240,9 +240,14 @@ namespace lab07
             
             int x = 0;
 
-            x = selItem.ID1 -1 ; 
-            lista3[x] = new ksiazki(selItem.tytul, selItem.autor, selItem.ID1, selItem.Wypozycz - 1);
-            lista_książ.Items[x] = new ksiazki(selItem.tytul, selItem.autor, selItem.ID1, selItem.Wypozycz -1 );
+            x = selItem.ID1 -1 ;
+
+            var selitem2 = lista_użyt.SelectedItem as uzytkownicy;
+
+            string x2 = selitem2.id.ToString() ; 
+
+            lista3[x] = new ksiazki(selItem.tytul, selItem.autor, selItem.ID1, x2);
+            lista_książ.Items[x] = new ksiazki(selItem.tytul, selItem.autor, selItem.ID1, x2);
 
         }
 
@@ -253,7 +258,8 @@ namespace lab07
             int x = 0;
 
             x = selItem.ID1 - 1;
-            lista_książ.Items[x] = new ksiazki(selItem.tytul, selItem.autor, selItem.ID1, selItem.Wypozycz + 1 );
+            lista3[x] = new ksiazki(selItem.tytul, selItem.autor, selItem.ID1, "--");
+            lista_książ.Items[x] = new ksiazki(selItem.tytul, selItem.autor, selItem.ID1, "--" );
         }
 
         private void dodaj_czyt_Click(object sender, RoutedEventArgs e)
@@ -280,8 +286,9 @@ namespace lab07
         private void dodaj_Copy_Click(object sender, RoutedEventArgs e)
         {
             użytkownicy_dane.podane_id1 = lista_książ.Items.Count + 1;
+            użytkownicy_dane.podane_wypoz = "--";
             lista3.Add(new ksiazki(użytkownicy_dane.podany_tytul, użytkownicy_dane.podany_autor, użytkownicy_dane.podane_id1, użytkownicy_dane.podane_wypoz));
-            użytkownicy_dane.podane_wypoz = 1;
+            
             lista_książ.Items.Add(new ksiazki(użytkownicy_dane.podany_tytul, użytkownicy_dane.podany_autor, użytkownicy_dane.podane_id1, użytkownicy_dane.podane_wypoz));
             lista_książ.Items.Refresh();
         }
