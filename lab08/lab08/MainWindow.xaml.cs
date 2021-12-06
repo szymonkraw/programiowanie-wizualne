@@ -157,7 +157,10 @@ namespace lab08
            //     {
                 int id = 1;
                 string[] data = pierwszy_split[i].Split(',');
+                if (data.Length > 5)
+                {
                 lotnisko_lista.Items.Add(new lotnisko(data[0], data[1], id, data[2], data[3], data[4],  data[5]));
+                }
                 //  lotnisko_lista.Items.Add(new lotnisko(data[0], data[1], id, data[2], data[3], data[4], data[5], data[6]));
                 id = id + 1;
               //  }
