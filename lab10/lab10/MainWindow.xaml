@@ -1,0 +1,23 @@
+﻿<Window x:Class="lab10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Name = "play" Content="Play" HorizontalAlignment="Left" Margin="48,93,0,0" VerticalAlignment="Top" Height="58" Width="113" Click="play_Click"/>
+        <Button Name = "stop" Content="Stop" HorizontalAlignment="Left" Margin="48,246,0,0" VerticalAlignment="Top" Height="58" Width="113" Click="stop_Click"/>
+        <Label  Content="Kolędnik" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="633" FontSize="20" HorizontalContentAlignment="Center"/>
+        <CheckBox Name ="song1" Content="All I want for christmas" HorizontalAlignment="Left" Margin="512,93,0,0" VerticalAlignment="Top" Height="29" Width="204" FontSize="15" Checked="song1_Checked" Unchecked="song1_Unchecked"/>
+        <CheckBox Name ="song2" Content="Rockin around the christmas tree" HorizontalAlignment="Left" Margin="512,122,0,0" VerticalAlignment="Top" Height="29" Width="263" FontSize="15" Checked="song2_Checked" Unchecked="song2_Unchecked"/>
+        <CheckBox Name ="song3" Content="Jingle bell rock" HorizontalAlignment="Left" Margin="512,151,0,0" VerticalAlignment="Top" Height="29" Width="204" FontSize="15" Checked="song3_Checked" Unchecked="song3_Unchecked"/>
+        <CheckBox Name ="song4" Content="Sleigh ride" HorizontalAlignment="Left" Margin="512,180,0,0" VerticalAlignment="Top" Height="29" Width="204" FontSize="15" Checked="song4_Checked" Unchecked="song4_Unchecked"/>
+        <CheckBox Name ="song5" Content="Happy Xmas" HorizontalAlignment="Left" Margin="512,209,0,0" VerticalAlignment="Top" Height="29" Width="204" FontSize="15" Checked="song5_Checked" Unchecked="song5_Unchecked"/>
+        <CheckBox Name ="song6" Content="Undermeath the christmas tree" HorizontalAlignment="Left" Margin="512,238,0,0" VerticalAlignment="Top" Height="29" Width="250" FontSize="15" Checked="song6_Checked" Unchecked="song6_Unchecked"/>
+        <CheckBox Name ="song7" Content="You make it feel like christmas" HorizontalAlignment="Left" Margin="512,261,0,0" VerticalAlignment="Top" Height="29" Width="263" FontSize="15" Checked="song7_Checked" Unchecked="song7_Unchecked"/>
+       
+
+    </Grid>
+</Window>
